@@ -43,7 +43,7 @@ ${fields.map((e) => '      other.$e == $e').join(' &&\n')};
 void main(List<String> args) async {
   final f = File('lib/src/tuple.dart');
   final file = f.openWrite();
-  for (int i = 2; i <= 7; i++) {
+  for (var i = 2; i <= 7; i++) {
     file.write(makeTupleCode(i));
     file.write('\n');
   }
