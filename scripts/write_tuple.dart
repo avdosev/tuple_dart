@@ -10,7 +10,10 @@ String makeTupleCode(int length) {
   final withMethods = Iterable.generate(length, (int i) {
     final t = [...types.take(i), 'E', ...types.skip(i + 1)];
     final f = [...fields.take(i), 'newItem', ...fields.skip(i + 1)];
-    return '  Tuple$length<${t.join(', ')}> withItem${i + 1}<E>(E newItem) => Tuple$length(${f.join(', ')});\n';
+    return """
+  /// Returns a tuple with the item${i + 1} set to the specified value.
+  Tuple$length<${t.join(', ')}> withItem${i + 1}<E>(E newItem) => Tuple$length(${f.join(', ')});
+""";
   });
 
   return """/// Represents a $length-tuple
@@ -19,6 +22,11 @@ $classFields
   const Tuple$length(${fields.map((e) => 'this.$e').join(', ')});
 
 ${withMethods.join()}
+
+  Iterable get iterable sync* {
+${fields.map((e) => '    yield $e;\n').join()}  }
+
+  List toList({bool growable = false}) => List.from(iterable, growable: growable);
 
   @override
   String toString() => '(${fields.map((e) => '\$$e').join(', ')})';
