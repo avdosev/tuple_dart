@@ -30,6 +30,9 @@ class Tuple2<T1, T2> {
   @override
   bool operator ==(Object other) =>
       other is Tuple2 && other.item1 == item1 && other.item2 == item2;
+
+  @override
+  int get hashCode => Object.hash(item1, item2);
 }
 
 /// Represents a 3-tuple
@@ -72,6 +75,9 @@ class Tuple3<T1, T2, T3> {
       other.item1 == item1 &&
       other.item2 == item2 &&
       other.item3 == item3;
+
+  @override
+  int get hashCode => Object.hash(item1, item2, item3);
 }
 
 /// Represents a 4-tuple
@@ -124,6 +130,9 @@ class Tuple4<T1, T2, T3, T4> {
       other.item2 == item2 &&
       other.item3 == item3 &&
       other.item4 == item4;
+
+  @override
+  int get hashCode => Object.hash(item1, item2, item3, item4);
 }
 
 /// Represents a 5-tuple
@@ -183,6 +192,9 @@ class Tuple5<T1, T2, T3, T4, T5> {
       other.item3 == item3 &&
       other.item4 == item4 &&
       other.item5 == item5;
+
+  @override
+  int get hashCode => Object.hash(item1, item2, item3, item4, item5);
 }
 
 /// Represents a 6-tuple
@@ -250,6 +262,9 @@ class Tuple6<T1, T2, T3, T4, T5, T6> {
       other.item4 == item4 &&
       other.item5 == item5 &&
       other.item6 == item6;
+
+  @override
+  int get hashCode => Object.hash(item1, item2, item3, item4, item5, item6);
 }
 
 /// Represents a 7-tuple
@@ -325,6 +340,10 @@ class Tuple7<T1, T2, T3, T4, T5, T6, T7> {
       other.item5 == item5 &&
       other.item6 == item6 &&
       other.item7 == item7;
+
+  @override
+  int get hashCode =>
+      Object.hash(item1, item2, item3, item4, item5, item6, item7);
 }
 
 /// Represents a 8-tuple
@@ -407,4 +426,8 @@ class Tuple8<T1, T2, T3, T4, T5, T6, T7, T8> {
       other.item6 == item6 &&
       other.item7 == item7 &&
       other.item8 == item8;
+
+  @override
+  int get hashCode =>
+      Object.hash(item1, item2, item3, item4, item5, item6, item7, item8);
 }

@@ -39,8 +39,10 @@ ${fields.map((e) => '    yield $e;\n').join()}  }
   bool operator ==(Object other) =>
       other is Tuple$length &&
 ${fields.map((e) => '      other.$e == $e').join(' &&\n')};
-}
 
+  @override
+  int get hashCode => Object.hash(${fields.join(', ')});
+}
 """;
 }
 
@@ -49,9 +51,8 @@ void main(List<String> args) async {
   final file = f.openWrite();
   for (var i = 2; i <= 8; i++) {
     file.write(makeTupleCode(i));
-    file.write('\n');
+    if (i != 8) file.write('\n');
   }
-  file.write('\n');
   await file.flush();
   await file.close();
 }

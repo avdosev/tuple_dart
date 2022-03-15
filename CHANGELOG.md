@@ -1,3 +1,8 @@
+## 1.2.0
+
+* fix hashCode
+* add example
+
 ## 1.1.0
 
 * add Tuple8
