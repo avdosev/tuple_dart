@@ -22,6 +22,10 @@ $classFields
   const Tuple$length(${fields.map((e) => 'this.$e').join(', ')});
 
 ${withMethods.join()}
+  /// apply a function `f` over tuple fields
+  R apply<R>(R Function(${types.join(', ')}) f) {
+    return f(${fields.join(', ')});
+  }
 
   Iterable get iterable sync* {
 ${fields.map((e) => '    yield $e;\n').join()}  }
@@ -43,7 +47,7 @@ ${fields.map((e) => '      other.$e == $e').join(' &&\n')};
 void main(List<String> args) async {
   final f = File('lib/src/tuple.dart');
   final file = f.openWrite();
-  for (var i = 2; i <= 7; i++) {
+  for (var i = 2; i <= 8; i++) {
     file.write(makeTupleCode(i));
     file.write('\n');
   }
