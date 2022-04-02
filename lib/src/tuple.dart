@@ -1,3 +1,34 @@
+/// Represents a 1-tuple
+class Tuple1<T1> {
+  final T1 item1;
+
+  const Tuple1(this.item1);
+
+  /// Returns a tuple with the item1 set to the specified value.
+  Tuple1<E> withItem1<E>(E newItem) => Tuple1(newItem);
+
+  /// apply a function `f` over tuple fields
+  R apply<R>(R Function(T1) f) {
+    return f(item1);
+  }
+
+  Iterable get iterable sync* {
+    yield item1;
+  }
+
+  List toList({bool growable = false}) =>
+      List.from(iterable, growable: growable);
+
+  @override
+  String toString() => '($item1)';
+
+  @override
+  bool operator ==(Object other) => other is Tuple1 && other.item1 == item1;
+
+  @override
+  int get hashCode => item1.hashCode;
+}
+
 /// Represents a 2-tuple
 class Tuple2<T1, T2> {
   final T1 item1;

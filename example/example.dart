@@ -10,4 +10,15 @@ void main() {
   tuple.apply(print2); // output: "first 2";
   final tuple2 = tuple.withItem2('second'); // type Tuple2<String, String>
   tuple2.apply(print2); // output: "first second";
+  // or equal
+  print2.tuplized(tuple); // output: "first 2";
+  // also R Function(Tuple<T1...TN>) has detuplized getter
+  
+  // tuplize transformation
+  // R Function(T1...TN) -> R Function(Tuple<T1...TN>);
+  // final print2tuplized = print2.tuplized; 
+  
+  // detuplized transformation
+  // R Function(Tuple<T1...TN>) -> R Function(T1...TN);
+  // final print2detupled = print2tuplized.detuplized; 
 }
