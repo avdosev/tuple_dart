@@ -30,7 +30,9 @@ class Tuple1<T1> {
 }
 
 /// Represents a 2-tuple
-class Tuple2<T1, T2> {
+///
+/// compatible with MapEntry<T1, T2>
+class Tuple2<T1, T2> implements MapEntry<T1, T2> {
   final T1 item1;
   final T2 item2;
 
@@ -64,6 +66,12 @@ class Tuple2<T1, T2> {
 
   @override
   int get hashCode => Object.hash(item1, item2);
+
+  @override
+  T1 get key => item1;
+
+  @override
+  T2 get value => item2;
 }
 
 /// Represents a 3-tuple

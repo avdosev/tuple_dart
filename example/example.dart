@@ -13,12 +13,22 @@ void main() {
   // or equal
   print2.tuplized(tuple); // output: "first 2";
   // also R Function(Tuple<T1...TN>) has detuplized getter
-  
+
   // tuplize transformation
   // R Function(T1...TN) -> R Function(Tuple<T1...TN>);
-  // final print2tuplized = print2.tuplized; 
-  
+  // final print2tuplized = print2.tuplized;
+
   // detuplized transformation
   // R Function(Tuple<T1...TN>) -> R Function(T1...TN);
-  // final print2detupled = print2tuplized.detuplized; 
+  // final print2detupled = print2tuplized.detuplized;
+
+  // compatible with MapEntry
+  final tuples = [
+    Tuple2('1', 111),
+    Tuple2('2', 222),
+    Tuple2('3', 333),
+    Tuple2('4', 444),
+  ];
+
+  print(Map<String, int>.fromEntries(tuples));
 }

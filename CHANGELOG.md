@@ -1,3 +1,8 @@
+## 1.4.0
+
+* add compatibility with MapEntry
+* update readme
+
 ## 1.3.0
 
 * add tuplized

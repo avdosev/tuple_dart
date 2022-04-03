@@ -5,7 +5,7 @@ A library providing a tuple data structure for Dart.
 * No dependency
 * Easy usage
 * Support `tuple1` - `tuple8`
-* ideal for using `compute`
+* ideal for use with `compute`
 * Used by the [itertools](https://pub.dev/packages/itertools) package
 
 ## Usage
@@ -43,11 +43,21 @@ void main() {
   // detuplized transformation
   // R Function(Tuple<T1...TN>) -> R Function(T1...TN);
   // final print2detupled = print2tuplized.detuplized; 
+
+  // compatible with MapEntry
+  final tuples = [
+    Tuple2('1', 111),
+    Tuple2('2', 222),
+    Tuple2('3', 333),
+    Tuple2('4', 444),
+  ];
+
+  print(Map<String, int>.fromEntries(tuples));
 }
 
 ```
 
-### ideal for using compute
+### ideal for use with compute
 
 ```dart
 import 'package:tuple_dart/tuple.dart';
