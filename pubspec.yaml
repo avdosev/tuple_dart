@@ -1,6 +1,6 @@
 name: tuple_dart
 description: A library providing a tuple data structure for Dart and a convenient way to use it
-version: 1.4.1
+version: 1.4.2
 homepage: https://github.com/avdosev
 repository: https://github.com/avdosev/tuple_dart
 
