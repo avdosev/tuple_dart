@@ -1,4 +1,1 @@
-library tuple_dart;
-
-export 'src/tuple.dart';
-export 'src/tuplize.dart';
+export 'tuple_dart.dart';
