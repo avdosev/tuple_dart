@@ -1,3 +1,7 @@
+## 1.4.1
+
+* some fixes with pub.dev
+
 ## 1.4.0
 
 * add compatibility with MapEntry
