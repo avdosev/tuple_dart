@@ -1,4 +1,5 @@
-## 1.4.1/2
+## 1.4.2
+## 1.4.1
 
 * some fixes with pub.dev
 
